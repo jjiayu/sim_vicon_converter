@@ -45,6 +45,7 @@ public:
 
     vicon_pub_ = nh_.advertise<geometry_msgs::PoseWithCovarianceStamped>("vicon/pose", 1000);
     vicon_sub_ = nh_.subscribe(vicon_topic_, 10, &ViconDataConverter::vicon_callback, this, ros::TransportHints().tcpNoDelay());
+
   }
 
 private:
@@ -75,6 +76,7 @@ private:
     //ROS_INFO("Publishing converted vicon data");
     vicon_pub_.publish(new_msg);
   }
+
 };
 }  // namespace sim_vicon_data_converter
 
