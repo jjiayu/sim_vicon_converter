@@ -69,6 +69,11 @@ private:
     new_msg.header.stamp = ros::Time().now();
     new_msg.header.frame_id = "map";
     new_msg.pose = msg->pose;
+    //new_msg.pose.pose.position.x = new_msg.pose.pose.position.x;
+    //new_msg.pose.pose.orientation.x = 0.0;
+    //new_msg.pose.pose.orientation.y = 0.02181489;
+    //new_msg.pose.pose.orientation.z = 0.0;
+    //new_msg.pose.pose.orientation.w =  0.99976203;
 
     for (size_t i = 0; i < vicon_covariance_.size(); i++) {
      new_msg.pose.covariance[i] = vicon_covariance_[i];
